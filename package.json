@@ -1,0 +1,80 @@
+{
+  "name": "kctlogin",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "main": "electron.js",
+  "scripts": {
+    "dev": "concurrently \"vite --host 127.0.0.1 --port 5174\" \"tsx watch --exclude 'server/data/**' server/index.ts\" \"wait-on http://localhost:5174 && electron .\"",
+    "dev:client": "vite --host 127.0.0.1 --port 5174",
+    "dev:server": "tsx watch --exclude 'server/data/**' server/index.ts",
+    "mcp:stdio": "tsx server/mcp.ts",
+    "build": "tsc -b && esbuild server/index.ts --bundle --platform=node --format=esm --packages=external --outfile=dist-server/index.js && vite build",
+    "preview": "vite preview --host 127.0.0.1 --port 4174",
+    "rebuild:installer": "bash scripts/rebuild-installer.sh",
+    "dist:mac": "npm run build && electron-builder --mac",
+    "pack:mac": "npm run build && electron-builder --mac --dir"
+  },
+  "build": {
+    "appId": "com.kct.kctlogin",
+    "productName": "KCTLogin",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "electron.js",
+      "package.json",
+      "build/icon.icns",
+      "dist/**",
+      "dist-server/**",
+      "server/data/.keep"
+    ],
+    "extraResources": [
+      {
+        "from": "vendor/orbita-browser-146",
+        "to": "vendor/orbita-browser-146"
+      },
+      {
+        "from": "vendor/fonts",
+        "to": "vendor/fonts"
+      }
+    ],
+    "mac": {
+      "icon": "build/icon.icns",
+      "target": "dmg",
+      "category": "public.app-category.productivity"
+    }
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.29.0",
+    "@pilio/gemini-watermark-remover": "^1.0.10",
+    "@tailwindcss/vite": "^4.2.2",
+    "@vitejs/plugin-react": "^6.0.1",
+    "axios": "^1.15.0",
+    "concurrently": "^9.2.1",
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "lucide-react": "^1.8.0",
+    "multer": "^2.1.1",
+    "playwright": "^1.59.1",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "sharp": "^0.34.5",
+    "tailwindcss": "^4.2.2",
+    "tsx": "^4.21.0",
+    "typescript": "~6.0.2",
+    "vite": "^8.0.4",
+    "wait-on": "^9.0.5",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
+    "@types/multer": "^2.1.0",
+    "@types/node": "^24.12.2",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "electron": "^41.2.0",
+    "electron-builder": "^26.0.12"
+  }
+}

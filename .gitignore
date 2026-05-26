@@ -1,0 +1,19 @@
+node_modules/
+
+# Build outputs
+dist/
+dist-server/
+release/
+
+# Runtime and generated files
+tmp/
+server/data/*
+!server/data/.keep
+
+# Local OS/editor files
+.DS_Store
+.env
+.env.*
+
+# Bundled third-party runtimes/assets
+vendor/
