@@ -2,6 +2,8 @@
 
 KCTLogin la ung dung Electron de quan ly profile trinh duyet, fingerprint, proxy, cookies va API/MCP local.
 
+![KCTLogin dashboard](public/screenshots/app-dashboard.png)
+
 ## Chuc nang chinh
 
 - Quan ly profile: tao, sua, clone, xoa, random fingerprint, chay/dung profile.
