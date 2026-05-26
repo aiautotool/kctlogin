@@ -13,7 +13,9 @@
     "preview": "vite preview --host 127.0.0.1 --port 4174",
     "rebuild:installer": "bash scripts/rebuild-installer.sh",
     "dist:mac": "npm run build && electron-builder --mac",
-    "pack:mac": "npm run build && electron-builder --mac --dir"
+    "pack:mac": "npm run build && electron-builder --mac --dir",
+    "dist:win": "npm run build && electron-builder --win",
+    "pack:win": "npm run build && electron-builder --win --dir"
   },
   "build": {
     "appId": "com.kct.kctlogin",
@@ -43,6 +45,9 @@
       "icon": "build/icon.icns",
       "target": "dmg",
       "category": "public.app-category.productivity"
+    },
+    "win": {
+      "target": "nsis"
     }
   },
   "dependencies": {

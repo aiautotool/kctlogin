@@ -1,9 +1,9 @@
 node_modules/
 
 # Build outputs
-dist/
-dist-server/
-release/
+release/mac*/
+release/win-unpacked/
+release/**/.DS_Store
 
 # Runtime and generated files
 tmp/

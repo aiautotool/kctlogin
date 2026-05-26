@@ -1,0 +1,8 @@
+version: 0.1.0
+files:
+  - url: KCTLogin-0.1.0-arm64.dmg
+    sha512: TFGM0aRcKdnPQxWt6/IEQ1JzZJ1hENtRFdylL++Fzmn/JJ7dMLb3zyvpIm9BHIi8AQ/SB7i2367uf55IZUEMkg==
+    size: 485484898
+path: KCTLogin-0.1.0-arm64.dmg
+sha512: TFGM0aRcKdnPQxWt6/IEQ1JzZJ1hENtRFdylL++Fzmn/JJ7dMLb3zyvpIm9BHIi8AQ/SB7i2367uf55IZUEMkg==
+releaseDate: '2026-05-26T17:37:04.334Z'

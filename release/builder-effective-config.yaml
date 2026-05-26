@@ -1,0 +1,23 @@
+directories:
+  output: release
+  buildResources: build
+appId: com.kct.kctlogin
+productName: KCTLogin
+files:
+  - filter:
+      - electron.js
+      - package.json
+      - build/icon.icns
+      - dist/**
+      - dist-server/**
+      - server/data/.keep
+extraResources:
+  - from: vendor/orbita-browser-146
+    to: vendor/orbita-browser-146
+  - from: vendor/fonts
+    to: vendor/fonts
+mac:
+  icon: build/icon.icns
+  target: dmg
+  category: public.app-category.productivity
+electronVersion: 41.5.0
